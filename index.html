@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Addvolt Assistant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://i.postimg.cc/sxLC37n7/Untitled.png" />
+    <style>
+      /* Full-screen styling for the chat widget iframe container */
+      .bp-widget-side {
+        width: 100% !important; /* Full width */
+        height: 100vh !important; /* Full height of the viewport */
+        position: fixed !important; /* Fixed position relative to the viewport */
+        top: 0 !important; /* Align top edge with viewport */
+        left: 0 !important; /* Align left edge with viewport */
+        right: 0 !important; /* Align right edge with viewport */
+        bottom: 0 !important; /* Align bottom edge with viewport */
+        border: none !important; /* No border */
+        border-radius: 0 !important; /* No rounded corners for full screen */
+        overflow: hidden !important; /* No scrollbars */
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script>
+      window.botpressWebChat.init({
+        composerPlaceholder: 'Chat with me',
+        botConversationDescription: 'Question me anything about Addvolt',
+        botId: '40908648-a2ee-4351-8312-9509d507aad7',
+        hostUrl: 'https://cdn.botpress.cloud/webchat/v1',
+        messagingUrl: 'https://messaging.botpress.cloud',
+        clientId: '40908648-a2ee-4351-8312-9509d507aad7',
+        webhookId: '88b03a78-f260-4809-af69-8129c1958b91',
+        lazySocket: true,
+        closeOnEscape: false,
+        enableConversationDeletion: true,
+        showCloseButton: false,
+        hideWidget: true,
+        disableAnimations: true,
+        showBotInfoPage: true,
+        phoneNumber: '+351 964 514 203',
+        emailAddress: 'tiago@augustalabs.co',
+        website: 'https://addvolt.com/',
+        locale: 'en',
+        themeName: 'prism',
+        themeColor: '#2563eb',
+        botName: 'Addvolt Assistant',
+        avatarUrl: 'https://i.postimg.cc/sxLC37n7/Untitled.png',
+        stylesheet:
+          'https://webchat-styler-css.botpress.app/prod/code/fde8847c-1142-4d54-9732-ef606ac59770/v25307/style.css',
+        frontendVersion: 'v1',
+        theme: 'prism',
+        themeColor: '#2563eb',
+      });
+    </script>
+    <script>
+      window.botpressWebChat.onEvent(
+        function () {
+          window.botpressWebChat.sendEvent({ type: 'show' });
+        },
+        ['LIFECYCLE.LOADED']
+      );
+      window.addEventListener('beforeunload', function () {
+        sessionStorage.clear();
+        localStorage.clear();
+      });
+
+      // .bpw-botinfo-start-button
+    </script>
+  </body>
+</html>
